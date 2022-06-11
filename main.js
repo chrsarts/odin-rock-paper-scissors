@@ -12,7 +12,7 @@ const botRandom = (botAns) => {
   return botAns;
 };
 bot = botRandom();
-player = "rock";
+let player;
 const play = (player, bot) => {
   switch (player) {
     case "rock":
@@ -24,6 +24,27 @@ const play = (player, bot) => {
         console.log("you lose.");
       }
       break;
+    case "scissors":
+      if (bot === "rock") {
+        console.log("you lose.");
+      } else if (bot === "scissors") {
+        console.log("draw!");
+      } else {
+        console.log("you win!");
+      }
+      break;
+    case "paper":
+      if (bot === "rock") {
+        console.log("you win!");
+      } else if (bot === "scissors") {
+        console.log("you lose.");
+      } else {
+        console.log("draw!");
+      }
+      break;
+    default:
+      console.log("enter rock, paper or scissors");
   }
 };
-console.log(play(player, bot));
+console.log(play("paper", bot));
+console.log(bot);
