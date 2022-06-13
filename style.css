@@ -3,3 +3,44 @@
   padding: 0px;
   box-sizing: border-box;
 }
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ps-container,
+.bs-container,
+.scores,
+.counter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.ps-container,
+.bs-container {
+  margin: 0px 10px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin: 20px;
+}
+
+.bot-choice,
+.answer-text {
+  text-align: center;
+}
