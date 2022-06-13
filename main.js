@@ -1,9 +1,3 @@
-/* rock paper scissors
-    -make a function to let bot choose rock, paper or scissors
-    -make a function that takes player rock paper or scissors
-    -compare both and declare a winner
-*/
-
 const botRandom = (botAns) => {
   let x = ["rock", "paper", "scissors"];
   let y = Math.floor(Math.random() * 3);
@@ -11,9 +5,11 @@ const botRandom = (botAns) => {
 
   return botAns;
 };
-bot = botRandom();
+let bot;
 let player;
 const play = (player, bot) => {
+  bot = botRandom();
+  console.log(bot);
   switch (player) {
     case "rock":
       if (bot === "rock") {
@@ -46,5 +42,3 @@ const play = (player, bot) => {
       console.log("enter rock, paper or scissors");
   }
 };
-console.log(play("paper", bot));
-console.log(bot);
