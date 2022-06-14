@@ -2,12 +2,15 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: monospace;
+  color: #6d8b74;
 }
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #efead8;
 }
 .text-container {
   display: flex;
@@ -38,6 +41,24 @@ body {
 
 button {
   margin: 20px;
+  color: #6d8b74;
+  background-color: #d0c9c0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+}
+button:hover {
+  margin: 20px;
+  color: #6d8b74;
+  background-color: #bcb2a4;
+  width: 150px;
+  height: 30px;
+  transform: scale(1.1);
+  transition: all 0.07s ease;
+  cursor: pointer;
 }
 
 .bot-choice,
