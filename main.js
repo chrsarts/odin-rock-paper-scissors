@@ -8,9 +8,15 @@ const botRandom = (botAns) => {
 let btnRock = document.querySelector(".rock");
 let btnPaper = document.querySelector(".paper");
 let btnScissors = document.querySelector(".scissors");
-
+let score = document.querySelector(".counter");
+const botChoice = document.querySelector(".bot-choice");
+const winLose = document.querySelector(".win-lose");
+const playerScore = document.querySelector(".player-score");
+const botScore = document.querySelector(".bot-score");
 let bot;
 let player;
+let playerCounter = 0;
+let botCounter = 0;
 
 btnRock.addEventListener("click", (e) => {
   e = "rock";
@@ -30,32 +36,41 @@ const play = (player, bot) => {
   switch (player) {
     case "rock":
       if (bot === "rock") {
-        console.log("draw!");
+        winLose.textContent = `Draw`;
       } else if (bot === "scissors") {
-        console.log("you win!");
+        winLose.textContent = `You Win`;
+        playerCounter++;
       } else {
-        console.log("you lose.");
+        winLose.textContent = `You Lose`;
+        botCounter++;
       }
       break;
     case "scissors":
       if (bot === "rock") {
-        console.log("you lose.");
+        winLose.textContent = `You Lose`;
+        botCounter++;
       } else if (bot === "scissors") {
-        console.log("draw!");
+        winLose.textContent = `Draw`;
       } else {
-        console.log("you win!");
+        winLose.textContent = `You Win`;
+        playerCounter++;
       }
       break;
     case "paper":
       if (bot === "rock") {
-        console.log("you win!");
+        winLose.textContent = `You Win`;
+        playerCounter++;
       } else if (bot === "scissors") {
-        console.log("you lose.");
+        winLose.textContent = `You Lose`;
+        botCounter++;
       } else {
-        console.log("draw!");
+        winLose.textContent = `Draw`;
       }
       break;
     default:
       console.log("enter rock, paper or scissors");
   }
+  botChoice.textContent = `Bot chose: ${bot}`;
+  botScore.textContent = `Bot: ${botCounter}`;
+  playerScore.textContent = `Player: ${playerCounter}`;
 };
