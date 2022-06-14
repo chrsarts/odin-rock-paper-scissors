@@ -36,35 +36,26 @@ const play = (player, bot) => {
   switch (player) {
     case "rock":
       if (bot === "rock") {
-        winLose.textContent = `Draw`;
       } else if (bot === "scissors") {
-        winLose.textContent = `You Win`;
         playerCounter++;
       } else {
-        winLose.textContent = `You Lose`;
         botCounter++;
       }
       break;
     case "scissors":
       if (bot === "rock") {
-        winLose.textContent = `You Lose`;
         botCounter++;
       } else if (bot === "scissors") {
-        winLose.textContent = `Draw`;
       } else {
-        winLose.textContent = `You Win`;
         playerCounter++;
       }
       break;
     case "paper":
       if (bot === "rock") {
-        winLose.textContent = `You Win`;
         playerCounter++;
       } else if (bot === "scissors") {
-        winLose.textContent = `You Lose`;
         botCounter++;
       } else {
-        winLose.textContent = `Draw`;
       }
       break;
     default:
@@ -73,4 +64,13 @@ const play = (player, bot) => {
   botChoice.textContent = `Bot chose: ${bot}`;
   botScore.textContent = `Bot: ${botCounter}`;
   playerScore.textContent = `Player: ${playerCounter}`;
+  scoreCheck();
+};
+
+const scoreCheck = () => {
+  if (playerCounter === 5) {
+    alert("you win");
+  } else if (botCounter === 5) {
+    alert("you lose");
+  }
 };
